@@ -5,6 +5,7 @@ import { gameConfig } from "./config";
 import { Scene } from "./scenes/scene";
 import { MenuButton } from "./components/menuButton";
 import { SceneTwo } from "./scenes/scene-two";
+import { SceneOne } from "./scenes/scene-one";
 
 /**
  * The main menu. Presents 3 feature selection options
@@ -20,7 +21,7 @@ export class MainMenu extends Container {
         const { btn1Pos, btn2Pos, btn3Pos, size } = gameConfig.mainMenu;
 
         const button1 = new MenuButton( "Demo - 1", () => {
-            // this.onSelect( );
+            this.onSelect( new SceneOne() );
         } );
         button1.position.copyFrom(btn1Pos);
 

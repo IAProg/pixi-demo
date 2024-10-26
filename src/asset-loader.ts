@@ -19,7 +19,15 @@ const textureManifest = [
     { alias: "emoji-3", src: "textures/emoji-3.png"},
     { alias: "emoji-4", src: "textures/emoji-4.png"},
     { alias: "emoji-5", src: "textures/emoji-5.png"},
-    { alias: "dollar", src: "textures/dollar.png"}
+    { alias: "dollar", src: "textures/dollar.png"},
+    { alias: "card-1", src: "textures/card1.png"},
+    { alias: "card-2", src: "textures/card2.png"},
+    { alias: "card-3", src: "textures/card3.png"},
+    { alias: "card-4", src: "textures/card4.png"},
+    { alias: "card-5", src: "textures/card5.png"},
+    { alias: "card-6", src: "textures/card6.png"},
+    { alias: "card-7", src: "textures/card7.png"},
+    { alias: "card-8", src: "textures/card8.png"}
 ] as Array<IAssetDefinition>
 
 

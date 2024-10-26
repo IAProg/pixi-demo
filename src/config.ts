@@ -39,6 +39,25 @@ export const gameConfig = {
             strokeThickness: 6
         } as TextStyle
     },
+    sceneOne:{
+        cardCount: 144,
+        stackAPos: {x: -250, y: 225},
+        stackBPos: {x: +250, y: 225},
+        counterAPos: {x: -175, y: 200},
+        counterBPos: {x: +175, y: 200},
+        fpsPos: {x: 0, y: -225},
+
+        cardTextures:[
+            "card-1",
+            "card-2",
+            "card-3",
+            "card-4",
+            "card-5",
+            "card-6",
+            "card-7",
+            "card-8"
+        ]
+    },
     sceneTwo:{
         strings: [ 
             "<sprite style=dollar/><money>10,000!!</money> <bigMoney>BIG MONEY</bigMoney><sprite style=emoji5/>",
