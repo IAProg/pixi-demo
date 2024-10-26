@@ -7,7 +7,7 @@ import { Scene } from "./scene/scene";
  * The core of the application. 
  * The application is responsible for managing sub components of the game and conducting high level game flow
  */
-export class App extends Application<HTMLCanvasElement> {
+export class App extends Application {
     private _background: Background;
     private _mainMenu: MainMenu;
     private _activeScene?: Scene;

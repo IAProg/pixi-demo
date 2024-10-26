@@ -25,7 +25,7 @@ export abstract class Scene extends Container {
         this._closeButton = new Sprite(getTexture("close-button"));
         this._closeButton.anchor.set(0.5);
         this._closeButton.position.copyFrom(closeBtnPos);
-        this._closeButton.eventMode = "static";
+        this._closeButton.interactive = this._closeButton.buttonMode = true;
         this._closeButton.on("pointerdown", () => {
             if ( this._resolveFeature ) this._resolveFeature();
         });

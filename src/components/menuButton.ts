@@ -23,7 +23,7 @@ export class MenuButton extends Container {
 
         this.addChild(this._bg, this._text);
 
-        this._bg.eventMode = "static";
+        this._bg.buttonMode = this._bg.interactive = true;
         this._bg.on("pointerdown", () => onClick() );
         
     }

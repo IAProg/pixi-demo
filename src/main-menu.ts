@@ -6,6 +6,7 @@ import { Scene } from "./scene/scene";
 import { MenuButton } from "./components/menuButton";
 import { SceneTwo } from "./scene/scene-two";
 import { SceneOne } from "./scene/scene-one";
+import { SceneThree } from "./scene/scene-three";
 
 /**
  * The main menu. Presents 3 feature selection options
@@ -31,7 +32,7 @@ export class MainMenu extends Container {
         button2.position.copyFrom(btn2Pos);
 
         const button3 = new MenuButton( "Demo - 3", () => {
-            // this.onSelect( );
+            this.onSelect( new SceneThree() );
         } );
         button3.position.copyFrom(btn3Pos);
 

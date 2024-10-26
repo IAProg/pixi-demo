@@ -1,8 +1,8 @@
 import { Point } from "pixi.js";
 
 export interface IAssetDefinition {
-    alias: string;
-    src: string;
+    name: string;
+    url: string;
 }
 
 export interface ISizeRef {
