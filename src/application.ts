@@ -2,7 +2,7 @@ import { Application } from "pixi.js";
 import { gameConfig } from "./config";
 import { Background } from "./components/background";
 import { MainMenu } from "./main-menu";
-import { Scene } from "./scenes/scene";
+import { Scene } from "./scene/scene";
 /**
  * The core of the application. 
  * The application is responsible for managing sub components of the game and conducting high level game flow

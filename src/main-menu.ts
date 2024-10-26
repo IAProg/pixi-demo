@@ -2,10 +2,10 @@
 import { Container } from "pixi.js";
 import { ISizeRef } from "./types";
 import { gameConfig } from "./config";
-import { Scene } from "./scenes/scene";
+import { Scene } from "./scene/scene";
 import { MenuButton } from "./components/menuButton";
-import { SceneTwo } from "./scenes/scene-two";
-import { SceneOne } from "./scenes/scene-one";
+import { SceneTwo } from "./scene/scene-two";
+import { SceneOne } from "./scene/scene-one";
 
 /**
  * The main menu. Presents 3 feature selection options
