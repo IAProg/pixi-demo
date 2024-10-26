@@ -9,6 +9,7 @@ import MultiStyleText, { TextStyleSet, TextStyleSpriteConfig } from "../text/pix
  */
 export class SceneTwo extends Scene {
     private _text: MultiStyleText;
+    private _slideIndex: number = 0;
     private _isActive = true;
     
     constructor(){
@@ -48,14 +49,17 @@ export class SceneTwo extends Scene {
     private async _updateLoop(): Promise<void>{
         while ( this._isActive ){
             await delay(2000);
+            this._slideIndex++;
             this._updateText();
         }
     }
-
+    
     /**
      * update the text to a random combination of options
-     */
-    private _updateText(): void{
-        this._text.text = getRandomElement(gameConfig.sceneTwo.strings);
+    */
+   private _updateText(): void{
+        const strings = gameConfig.sceneTwo.strings;
+        const index = (this._slideIndex + strings.length) % strings.length;
+        this._text.text = strings[index];
     }
 }

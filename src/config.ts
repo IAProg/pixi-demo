@@ -74,6 +74,7 @@ export const gameConfig = {
     },
     sceneTwo:{
         strings: [ 
+            "<smallText>The Following Symbols Contribute Towards The Bonus Round:</smallText>\n<sprite style=symbol1/><sprite style=symbol2/><sprite style=symbol3/>\n<smallText>Good Luck!!</smallText>",
             "<sprite style=dollar/><money>10,000!!</money> <bigMoney>BIG MONEY</bigMoney><sprite style=emoji5/>",
             "Bruh<sprite style=emoji2/><sprite style=emoji2/><sprite style=emoji2/><sprite style=emoji2/>",
             "I am evil!! <sprite style=emoji3/>",
@@ -84,6 +85,12 @@ export const gameConfig = {
             default: {
                 fontFamily: "Arial",
                 fontSize: "32px",
+                fill: "#333333",
+                align: "center"
+            } as TextStyle,
+            smallText: {
+                fontFamily: "Arial",
+                fontSize: "20px",
                 fill: "#333333",
                 align: "center"
             } as TextStyle,
@@ -137,6 +144,24 @@ export const gameConfig = {
                 src: "dollar",
                 height: 32,
                 width: 32,
+                yOffset: -4
+            } as TextStyleSpriteConfig,
+            symbol1: {
+                src: "card-1",
+                height: 128,
+                width: 88,
+                yOffset: -4
+            } as TextStyleSpriteConfig,
+            symbol2: {
+                src: "card-2",
+                height: 128,
+                width: 88,
+                yOffset: -4
+            } as TextStyleSpriteConfig,
+            symbol3: {
+                src: "card-3",
+                height: 128,
+                width: 88,
                 yOffset: -4
             } as TextStyleSpriteConfig
         } as TextStyleSetConfig
