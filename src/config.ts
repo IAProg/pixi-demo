@@ -1,5 +1,6 @@
 import { TextStyle } from "pixi.js";
 import { ISizeRef } from "./types";
+import { TextStyleSet, TextStyleSetConfig, TextStyleSprite, TextStyleSpriteConfig } from "./text/pixi-multistyle-text";
 
 
 /**
@@ -37,6 +38,76 @@ export const gameConfig = {
             lineJoin: "round",
             strokeThickness: 6
         } as TextStyle
+    },
+    sceneTwo:{
+        strings: [ 
+            "<sprite style=dollar/><money>10,000!!</money> <bigMoney>BIG MONEY</bigMoney><sprite style=emoji5/>",
+            "Bruh<sprite style=emoji2/><sprite style=emoji2/><sprite style=emoji2/><sprite style=emoji2/>",
+            "I am evil!! <sprite style=emoji3/>",
+            "<sprite style=emoji1/> LMAO!!!! <sprite style=emoji1/><sprite style=emoji1/> WHAT!? <sprite style=emoji1/>",
+            "<sprite style=emoji4/> I forgot to put sugar in my tea <sprite style=emoji4/>",
+        ],
+        style:{
+            default: {
+                fontFamily: "Arial",
+                fontSize: "32px",
+                fill: "#333333",
+                align: "center"
+            } as TextStyle,
+            money: {
+                fontFamily: "Arial",
+                fontSize: "40px",
+                fill: "#40bd0a",
+                lineJoin: "round",
+                stroke: "#ff0000",
+                align: "center"
+            } as TextStyle,
+            bigMoney: {
+                fontFamily: "Arial",
+                fontSize: "42px",
+                fill: "#ffc800",
+                lineJoin: "round",
+                stroke: "#ff0000",
+                align: "center"
+            } as TextStyle,
+            emoji1: {
+                src: "emoji-1",
+                height: 32,
+                width: 32,
+                yOffset: -4
+            } as TextStyleSpriteConfig,
+            emoji2: {
+                src: "emoji-2",
+                height: 32,
+                width: 32,
+                yOffset: -4
+            } as TextStyleSpriteConfig,
+            emoji3: {
+                src: "emoji-3",
+                height: 32,
+                width: 32,
+                yOffset: -4
+            } as TextStyleSpriteConfig,
+            emoji4: {
+                src: "emoji-4",
+                height: 32,
+                width: 32,
+                yOffset: -4
+            } as TextStyleSpriteConfig,
+            emoji5: {
+                src: "emoji-5",
+                height: 32,
+                width: 32,
+                yOffset: -4
+            } as TextStyleSpriteConfig,
+            dollar: {
+                src: "dollar",
+                height: 32,
+                width: 32,
+                yOffset: -4
+            } as TextStyleSpriteConfig
+        } as TextStyleSetConfig
     }
-}
+} 
+
 

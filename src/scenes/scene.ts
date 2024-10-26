@@ -22,7 +22,7 @@ export abstract class Scene extends Container {
         this._backdrop = new Sprite(backdropTexture);
         this._backdrop.anchor.set(0.5);
 
-        this._closeButton = new Sprite(getTexture("closeButton"));
+        this._closeButton = new Sprite(getTexture("close-button"));
         this._closeButton.anchor.set(0.5);
         this._closeButton.position.copyFrom(closeBtnPos);
         this._closeButton.eventMode = "static";

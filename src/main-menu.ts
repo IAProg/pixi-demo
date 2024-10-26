@@ -4,6 +4,7 @@ import { ISizeRef } from "./types";
 import { gameConfig } from "./config";
 import { Scene } from "./scenes/scene";
 import { MenuButton } from "./components/menuButton";
+import { SceneTwo } from "./scenes/scene-two";
 
 /**
  * The main menu. Presents 3 feature selection options
@@ -24,7 +25,7 @@ export class MainMenu extends Container {
         button1.position.copyFrom(btn1Pos);
 
         const button2 = new MenuButton( "Demo - 2", () => {
-            // this.onSelect( );
+            this.onSelect( new SceneTwo() );
         } );
         button2.position.copyFrom(btn2Pos);
 

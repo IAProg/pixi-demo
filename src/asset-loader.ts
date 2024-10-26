@@ -9,7 +9,17 @@ import { IAssetDefinition } from "./types";
  */
 const textureManifest = [
     { alias: "background", src: "textures/background.png"},
-    { alias: "menu-button", src: "textures/menu-button.png"}
+    { alias: "menu-button", src: "textures/menu-button.png"},
+    { alias: "close-button", src: "textures/close-button.png"},
+    { alias: "scene-bg-1", src: "textures/scene_bg_01.png"},
+    { alias: "scene-bg-2", src: "textures/scene_bg_02.png"},
+    { alias: "scene-bg-3", src: "textures/scene_bg_03.png"},
+    { alias: "emoji-1", src: "textures/emoji-1.png"},
+    { alias: "emoji-2", src: "textures/emoji-2.png"},
+    { alias: "emoji-3", src: "textures/emoji-3.png"},
+    { alias: "emoji-4", src: "textures/emoji-4.png"},
+    { alias: "emoji-5", src: "textures/emoji-5.png"},
+    { alias: "dollar", src: "textures/dollar.png"}
 ] as Array<IAssetDefinition>
 
 
