@@ -28,7 +28,8 @@ const textureManifest = [
     { name: "card-6", url: "card6.png"},
     { name: "card-7", url: "card7.png"},
     { name: "card-8", url: "card8.png"},
-    { name: "fire", url: "fire.png"}
+    { name: "fire-1", url: "fire-1.png"},
+    { name: "fire-2", url: "fire-2.png"}
 ] as Array<IAssetDefinition>
 
 

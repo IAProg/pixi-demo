@@ -20,107 +20,89 @@ export class SceneThree extends Scene {
         this._emitter = new Emitter(
             this._particleContainer as any,
             {
-                lifetime: {
-                    min: 0.5,
-                    max: 0.5
-                },
-                frequency: 0.008,
-                spawnChance: 1,
-                particlesPerWave: 1,
-                maxParticles: 1000,
-                pos: {
-                    x: 0,
-                    y: 0
-                },
                 addAtBack: false,
-                behaviors: [
+                pos: {x: 0, y: 0},
+                frequency: 0.001,
+                lifetime: {
+                    min: 0.1,
+                    max: 0.75
+                },
+                behaviors:[
                     {
-                        type: 'alpha',
-                        config: {
-                            alpha: {
+                        type: "alpha",
+                        config:{
+                            alpha:{
                                 list: [
-                                    {
-                                        value: 0.8,
-                                        time: 0
-                                    },
-                                    {
-                                        value: 0.1,
-                                        time: 1
-                                    }
-                                ],
-                            },
-                        }
-                    },
-                    {
-                        type: 'scale',
-                        config: {
-                            scale: {
-                                list: [
-                                    {
-                                        value: 1,
-                                        time: 0
-                                    },
-                                    {
-                                        value: 0.3,
-                                        time: 1
-                                    }
-                                ],
-                            },
-                        }
-                    },
-                    {
-                        type: 'color',
-                        config: {
-                            color: {
-                                list: [
-                                    {
-                                        value: "fb1010",
-                                        time: 0
-                                    },
-                                    {
-                                        value: "f5b830",
-                                        time: 1
-                                    }
-                                ],
-                            },
-                        }
-                    },
-                    {
-                        type: 'moveSpeed',
-                        config: {
-                            speed: {
-                                list: [
-                                    {
-                                        value: 200,
-                                        time: 0
-                                    },
-                                    {
-                                        value: 100,
-                                        time: 1
-                                    }
-                                ],
-                                isStepped: false
-                            },
-                        }
-                    },
-                    {
-                        type: 'spawnShape',
-                        config: {
-                            type: 'torus',
-                            data: {
-                                x: 0,
-                                y: 0,
-                                radius: 10
+                                    {time: 0, value: 0.62},
+                                    {time: 1, value: 0}
+                                ]
                             }
                         }
                     },
                     {
-                        type: 'textureSingle',
-                        config: {
-                            texture: getTexture("fire")
+                        type: "color",
+                        config:{
+                            color:{
+                                list: [
+                                    {time: 0, value: 'fff191'},
+                                    {time: 0.5, value: 'ff622c'},
+                                    {time: 1, value: '000000'},
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        type: "moveSpeedStatic",
+                        config:{
+                            max: 500,
+                            min: 500
+                        }
+                    },
+                    {
+                        type: "scale",
+                        config:{
+                            minMult: 1,
+                            scale: {
+                                list: [
+                                    {time: 0, value:0.25},
+                                    {time: 1, value:0.75},
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        type: "rotation",
+                        config:{
+                            accel: 0,
+                            maxSpeed: 50,
+                            maxStart: 275,
+                            minSpeed: 50,
+                            minStart: 265
+                        }
+                    },
+                    {
+                        type: "textureRandom",
+                        config:{
+                            textures: [
+                                getTexture("fire-1"),
+                                getTexture("fire-2")
+                            ]
+                        }
+                    },
+                    {
+                        type: "spawnShape",
+                        config:{
+                            data: {
+                                affectRotation: false,
+                                innerRadius: 0,
+                                radius: 10,
+                                x: 0,
+                                y: 225                                
+                            },
+                            type: "torus"
                         }
                     }
-                ],
+                ]
             }
         );
 
