@@ -1,5 +1,5 @@
 
-import { Container, Sprite } from "pixi.js";
+import { Container } from "pixi.js";
 import { ISizeRef } from "./types";
 import { gameConfig } from "./config";
 import { Scene } from "./scenes/scene";

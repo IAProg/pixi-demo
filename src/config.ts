@@ -1,6 +1,6 @@
 import { TextStyle } from "pixi.js";
 import { ISizeRef } from "./types";
-import { TextStyleSet, TextStyleSetConfig, TextStyleSprite, TextStyleSpriteConfig } from "./text/pixi-multistyle-text";
+import { TextStyleSetConfig, TextStyleSpriteConfig } from "./text/pixi-multistyle-text";
 
 
 /**

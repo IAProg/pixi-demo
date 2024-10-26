@@ -3,7 +3,7 @@
  * Linter disabled rather than linting whole file standard.
  * Abandon Hope All Ye Who Enter Here 💀(this is a pain to work with)
  */
-/* eslint-disable */
+/* tslint:disable */
 import * as PIXI from 'pixi.js';
 import { BaseTexture, Texture } from 'pixi.js';
 
