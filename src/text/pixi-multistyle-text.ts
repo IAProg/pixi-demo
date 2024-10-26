@@ -3,11 +3,10 @@
  * Linter disabled rather than linting whole file standard.
  * Abandon Hope All Ye Who Enter Here 💀(this is a pain to work with)
  */
+/* eslint-disable */
 /* tslint:disable */
 import * as PIXI from 'pixi.js';
 import { BaseTexture, Texture } from 'pixi.js';
-
-'use strict';
 
 const majorVersion = parseInt(PIXI.VERSION.split('.')[0], 10);
 if (majorVersion < 5) {
@@ -429,7 +428,7 @@ export default class MultiStyleText extends PIXI.Text {
         // transform styles in array
         let stylesArray = Object.keys(textStyles).map((key) => textStyles[key]);
 
-        let maxStrokeThickness = stylesArray.reduce((prev, cur) => Math.max(prev, cur.strokeThickness || 0), 0);
+        let maxStrokeThickness = stylesArray.reduce((prev, cur) => Math.max(prev, (cur as any).strokeThickness || 0), 0);
 
         let dropShadowPadding = this.getDropShadowPadding();
 
@@ -567,7 +566,7 @@ export default class MultiStyleText extends PIXI.Text {
                 //its a sprite
                 const spriteStyle = style as TextStyleSprite;
                 const texture: BaseTexture = spriteStyle.src.baseTexture;
-                const source = texture.resource.source;
+                const source = (texture.resource as any).source;
                 if (source)
                     this.context.drawImage(source,
                     x,
@@ -852,8 +851,8 @@ export default class MultiStyleText extends PIXI.Text {
         this.withPrivateMembers().dirty = false;
     }
 
-    private handleInteraction(e: PIXI.InteractionEvent) {
-        let ev = e as MstInteractionEvent;
+    private handleInteraction(e: any) {
+        let ev;
 
         let localPoint = e.data.getLocalPosition(this);
         let targetTag = this.hitboxes.reduce((prev: any, hitbox) => prev !== undefined ? prev : (hitbox.hitbox.contains(localPoint.x, localPoint.y) ? hitbox : undefined), undefined);
