@@ -21,12 +21,13 @@ export class SceneThree extends Scene {
             this._particleContainer as any,
             {
                 addAtBack: false,
-                pos: {x: 0, y: 0},
-                frequency: 0.001,
+                pos: {x: 0, y: 200},
+                frequency: 0.000001,
                 lifetime: {
                     min: 0.1,
-                    max: 0.75
+                    max: 0.25
                 },
+                maxParticles: 10,
                 behaviors:[
                     {
                         type: "alpha",
@@ -45,8 +46,7 @@ export class SceneThree extends Scene {
                             color:{
                                 list: [
                                     {time: 0, value: 'fff191'},
-                                    {time: 0.5, value: 'ff622c'},
-                                    {time: 1, value: '000000'},
+                                    {time: 1, value: 'fc3a52'}
                                 ]
                             }
                         }
@@ -54,8 +54,8 @@ export class SceneThree extends Scene {
                     {
                         type: "moveSpeedStatic",
                         config:{
-                            max: 500,
-                            min: 500
+                            max: 1000,
+                            min: 1000
                         }
                     },
                     {
@@ -64,8 +64,8 @@ export class SceneThree extends Scene {
                             minMult: 1,
                             scale: {
                                 list: [
-                                    {time: 0, value:0.25},
-                                    {time: 1, value:0.75},
+                                    {time: 0, value:0.5},
+                                    {time: 1, value:1.5},
                                 ]
                             }
                         }
@@ -97,7 +97,7 @@ export class SceneThree extends Scene {
                                 innerRadius: 0,
                                 radius: 10,
                                 x: 0,
-                                y: 225                                
+                                y: 0                                
                             },
                             type: "torus"
                         }
