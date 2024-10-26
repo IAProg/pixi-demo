@@ -4,7 +4,7 @@ import { IAssetDefinition } from "./types";
 
 /**
  * asset manifest, lists all assets to be loaded
- * With some more time this would have been loaded externally as JSON
+ * realistically though would be loaded externally
  * 
  */
 const textureManifest = [

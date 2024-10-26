@@ -15,3 +15,4 @@ export interface IButtonConfig {
     onClick: Function;
     tint: number;
 }
+

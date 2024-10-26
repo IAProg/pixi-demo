@@ -1,7 +1,7 @@
-import { Emitter, EmitterConfigV3 } from "@pixi/particle-emitter";
+import { Emitter } from "@pixi/particle-emitter";
 import { getTexture } from "../asset-loader";
 import { Scene } from "./scene";
-import { Container, Ticker } from "pixi.js";
+import { Container } from "pixi.js";
 import { gameConfig } from "../config";
 
 /**
@@ -15,13 +15,14 @@ export class SceneThree extends Scene {
         super(getTexture("scene-bg-3"));  
         this._particleContainer = new Container();
 
+        // parse the config 
+        // we need to inject live textures - this should really be done by a pre-processor or modified particle lib
         const { particleConfig }  = gameConfig.sceneThree;
         particleConfig.behaviors = particleConfig.behaviors.map(( behaviour ) => {
             if ( behaviour.type === "textureRandom" ){
-                for ( let i = 0; i < behaviour.config.textures.length; i++ ){
-                    const textureName = behaviour.config.textures[i]
-                    behaviour.config.textures[i] = getTexture(textureName);
-                }
+                behaviour.config.textures = behaviour.config.textureNames.map( (textureName) => 
+                    getTexture(textureName)
+                );
             }
             return behaviour;
         })

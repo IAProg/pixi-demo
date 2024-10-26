@@ -206,7 +206,7 @@ export const gameConfig = {
                 {
                     type: "textureRandom",
                     config:{
-                        textures: [
+                        textureNames: [
                             "fire-1",
                             "fire-2"
                         ]

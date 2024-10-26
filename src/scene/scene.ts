@@ -55,7 +55,7 @@ export abstract class Scene extends Container {
         this.position.set(
             width * 0.50,
             height * 0.50
-        )
+        );
     }
 
     /**

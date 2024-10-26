@@ -4,8 +4,6 @@ import { delay, getRandomElement } from "../utils";
 import { gameConfig } from "../config";
 import MultiStyleText, { TextStyleSet, TextStyleSpriteConfig } from "../text/pixi-multistyle-text";
 
-
-
 /**
  *
  */
@@ -49,7 +47,7 @@ export class SceneTwo extends Scene {
 
     private async _updateLoop(): Promise<void>{
         while ( this._isActive ){
-            await delay(2000)
+            await delay(2000);
             this._updateText();
         }
     }
