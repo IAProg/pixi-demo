@@ -4,6 +4,7 @@ import { Scene } from "./scene";
 import { gameConfig } from "../config";
 import { getTexture } from "../asset-loader";
 import { delay, getRandomElement } from "../utils";
+import MultiStyleText from "../text/pixi-multistyle-text";
 
 /**
  * Scene demonstrating the use of tweens to move cards from one stack to another 
@@ -11,7 +12,7 @@ import { delay, getRandomElement } from "../utils";
 export class SceneOne extends Scene {
     private _stackA: Array<Sprite> = [];
     private _stackB: Array<Sprite> = [];
-    private _stackCounters: Map<Array<Sprite>, Text>;
+    private _stackCounters: Map<Array<Sprite>, MultiStyleText>;
     private _fpsCounter: Text;
     private _ticker: Ticker;
 
@@ -20,7 +21,7 @@ export class SceneOne extends Scene {
     constructor(){
         super(getTexture("scene-bg-1"))
 
-        const { cardTextures, stackAPos, fpsPos, counterAPos, counterBPos } = gameConfig.sceneOne;
+        const { cardTextures, stackAPos, fpsPos, counterAPos, counterBPos, style } = gameConfig.sceneOne;
 
         for (let i = 0; i < 144; i++)
         {
@@ -35,11 +36,11 @@ export class SceneOne extends Scene {
         this._fpsCounter.anchor.set(0.5);
         this._fpsCounter.position.copyFrom(fpsPos);
 
-        const stackACounter = new Text();
+        const stackACounter = new MultiStyleText("", style);
         stackACounter.anchor.set(0.5);
         stackACounter.position.copyFrom(counterAPos);
 
-        const stackBCounter = new Text();
+        const stackBCounter = new MultiStyleText("", style);
         stackBCounter.anchor.set(0.5);
         stackBCounter.position.copyFrom(counterBPos);
         this._stackCounters = new Map([
@@ -99,7 +100,7 @@ export class SceneOne extends Scene {
     private updateCounter( stack: Array<Sprite> ): void{
         const counter = this._stackCounters.get(stack);
         if ( counter ){
-            counter.text = stack.length;
+            counter.text = `<card>card count</card>\n${stack.length}`;
         }
     }   
 

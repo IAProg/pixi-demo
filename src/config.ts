@@ -46,7 +46,6 @@ export const gameConfig = {
         counterAPos: {x: -175, y: 200},
         counterBPos: {x: +175, y: 200},
         fpsPos: {x: 0, y: -225},
-
         cardTextures:[
             "card-1",
             "card-2",
@@ -56,7 +55,21 @@ export const gameConfig = {
             "card-6",
             "card-7",
             "card-8"
-        ]
+        ],
+        style:{
+            default: {
+                fontFamily: "Arial",
+                fontSize: "32px",
+                fill: "#333333",
+                align: "center"
+            } as TextStyle,
+            card: {
+                fontFamily: "Arial",
+                fontSize: "10px",
+                fill: "#555555",
+                align: "center"
+            } as TextStyle
+        } as TextStyleSetConfig
     },
     sceneTwo:{
         strings: [ 
