@@ -170,12 +170,12 @@ export const gameConfig = {
         particleConfig: {
             addAtBack: false,
             pos: {x: 0, y: 200},
-            frequency: 0.000001,
+            frequency: 0.001,
             lifetime: {
                 min: 0.1,
                 max: 0.25
             },
-            maxParticles: 10,
+            maxParticles: 250,
             behaviors:[
                 {
                     type: "alpha",
@@ -194,7 +194,8 @@ export const gameConfig = {
                         color:{
                             list: [
                                 {time: 0, value: 'fff191'},
-                                {time: 1, value: 'fc3a52'}
+                                {time: 0.5, value: 'fc3a52'},
+                                {time: 1, value: '333333'},
                             ]
                         }
                     }
@@ -212,8 +213,8 @@ export const gameConfig = {
                         minMult: 1,
                         scale: {
                             list: [
-                                {time: 0, value:0.5},
-                                {time: 1, value:1.5},
+                                {time: 0, value:0.16},
+                                {time: 1, value:0.5},
                             ]
                         }
                     }
@@ -243,7 +244,7 @@ export const gameConfig = {
                         data: {
                             affectRotation: false,
                             innerRadius: 0,
-                            radius: 10,
+                            radius: 7.5,
                             x: 0,
                             y: 0                                
                         },

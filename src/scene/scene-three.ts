@@ -1,7 +1,7 @@
 import { Emitter } from "@pixi/particle-emitter";
 import { getTexture } from "../asset-loader";
 import { Scene } from "./scene";
-import { Container } from "pixi.js";
+import { Container, Sprite } from "pixi.js";
 import { gameConfig } from "../config";
 
 /**
@@ -16,7 +16,7 @@ export class SceneThree extends Scene {
         this._particleContainer = new Container();
 
         // parse the config 
-        // we need to inject live textures - this should really be done by a pre-processor or modified particle lib
+        // we need to inject live textures - this should really be done by a pre-processor or particle lib wrapper
         const { particleConfig }  = gameConfig.sceneThree;
         particleConfig.behaviors = particleConfig.behaviors.map(( behaviour ) => {
             if ( behaviour.type === "textureRandom" ){
@@ -32,8 +32,12 @@ export class SceneThree extends Scene {
             particleConfig
         );
 
+        const fireBase = new Sprite(getTexture("fire-base"));
+        fireBase.anchor.set(0.5);
+        fireBase.position.copyFrom(particleConfig.pos);
+
         this._emitter.autoUpdate = true;
-        this.addChild(this._particleContainer);        
+        this.addChild(fireBase, this._particleContainer);        
     }
 
     /**
